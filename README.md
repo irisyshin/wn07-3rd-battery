@@ -53,6 +53,23 @@
 ## 시스템 아키텍처
 <img width="1254" height="949" alt="아키텍처 drawio (1)" src="https://github.com/user-attachments/assets/7c3e097d-eb4c-42d8-9069-86e1bec63bb6" />
 
+- EC2 분리
+  - Backend 전용 EC2 1대, Front + Dashboard용 EC2 1대로 구성
+
+- 컨테이너 기반 배포
+  - 서비스별 도커 이미지 → 각자 ECR에 저장 후 EC2에 배포
+ 
+- 깃 액션 사용으로 CI/CD
+
+## 기술 스택
+| 영역                         | 사용 기술                                       |
+| -------------------------- | ------------------------------------------- |
+| Frontend                   | React, TypeScript, Vite, Axios 등            |
+| Backend                    | Python, FastAPI, Uvicorn                    |
+| DB                         | MariaDB           |
+| Infra & DevOps             | AWS EC2, ECR, GitHub Actions, Docker, Nginx |
+| Data/Analytics (Dashboard) | Python, Streamlit          |
+
 ---------------------------------------
 
 # 요구사항 정의서
